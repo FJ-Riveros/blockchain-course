@@ -12,7 +12,16 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const ARBITRUM_RPC_URL = process.env.ARBITRUM_RPC_URL;
 
 module.exports = {
-    solidity: "0.8.7",
+    solidity: {
+        compilers: [
+            {
+                version: "0.8.7",
+            },
+            {
+                version: "0.6.6",
+            },
+        ],
+    },
     defaultNetwork: "hardhat",
     networks: {
         hardhat: {
