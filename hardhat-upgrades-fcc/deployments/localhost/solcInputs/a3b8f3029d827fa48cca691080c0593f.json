@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Box.sol": {
+      "content": "// Implementation contract\r\npragma solidity ^0.8.7;\r\n\r\ncontract Box {\r\n  uint256 internal value;\r\n\r\n  event ValueChanged(uint256 newValue);\r\n\r\n  function store(uint256 newValue) public {\r\n    value = newValue;\r\n    emit ValueChanged(newValue);\r\n  }\r\n\r\n  function retrieve() public view returns (uint256) {\r\n    return value;\r\n  }\r\n\r\n  function version() public pure returns (uint256) {\r\n    return 1;\r\n  }\r\n}\r\n"
+    },
+    "contracts/BoxV2.sol": {
+      "content": "// Implementation contract\r\npragma solidity ^0.8.7;\r\n\r\ncontract BoxV2 {\r\n  uint256 internal value;\r\n\r\n  event ValueChanged(uint256 newValue);\r\n\r\n  function store(uint256 newValue) public {\r\n    value = newValue;\r\n    emit ValueChanged(newValue);\r\n  }\r\n\r\n  function retrieve() public view returns (uint256) {\r\n    return value;\r\n  }\r\n\r\n  function version() public pure returns (uint256) {\r\n    return 2;\r\n  }\r\n\r\n  function increment() public {\r\n    value = value + 1;\r\n    emit ValueChanged(value);\r\n  }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
